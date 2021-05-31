@@ -1,0 +1,50 @@
+{
+  "name": "vue-cap",
+  "version": "0.1.0",
+  "main": "dist/vue-cap.umd.js",
+  "module": "dist/vue-cap.esm.js",
+  "unpkg": "dist/vue-cap.min.js",
+  "browser": {
+    "./sfc": "src/vue-cap.vue"
+  },
+  "scripts": {
+    "serve": "vue serve --open src/vue-cap.vue",
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-cap.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-cap.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-cap.min.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@vue/cli-plugin-babel": "^4.5.13",
+    "rollup": "^1.17.0",
+    "rollup-plugin-vue": "^5.0.1",
+    "sass-loader": "^10",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": { }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "dependencies": {
+    "axios": "^0.21.1",
+    "lodash": "^4.17.21"
+  }
+}
