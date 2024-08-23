@@ -3,8 +3,6 @@
     
         <VueCap :indirizzo="indirizzo" />
 
-        <pre>{{ indirizzo }}</pre>
-
     </div>
 </template>
 

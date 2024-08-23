@@ -24,7 +24,7 @@ Eccome come puoi semplicemente usare il componente nel tuo progetto Vue:
 
 ```vue
 <template>
-    <VueCap :provincia="indirizzo.provincia" :comune="indirizzo.comune" :cap="indirizzo.cap" />
+    <VueCap :indirizzo="indirizzo" />
 </template>
 
 <script>
