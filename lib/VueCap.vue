@@ -26,7 +26,7 @@
                     <option v-for="z in base.cap" :key="z.value" :value="z.value">{{ z.text }}</option>
                 </select>
             </div>
-
+            
 		</template>
         <div v-else>
 			Loading...
@@ -68,6 +68,8 @@ export default {
 
 	watch: {
 		'indirizzo.provincia': function (p) {
+            console.log('indirizzo.provincia', p);
+
 			if (p) {
 				this.indirizzo.comune = '';
 				this.indirizzo.cap = '';
@@ -76,6 +78,8 @@ export default {
 		},
 
 		'indirizzo.comune': function (c) {
+            console.log('indirizzo.comune', c);
+
 			if (c) {
 				this.indirizzo.cap = '';
 				this.getCap(c);
@@ -96,7 +100,7 @@ export default {
 		},
 
 		getProvince() {
-			// console.log('getProvince');
+			console.log('getProvince');
 
 			this.base.province = _.chain(this.raw)
 				.orderBy('sigla')
@@ -115,7 +119,7 @@ export default {
 		},
 
 		getComuni(p) {
-			// console.log('getComuni', p);
+			console.log('getComuni', p);
 
 			this.base.comuni = _.chain(this.raw)
 				.filter({ sigla: p })
@@ -134,7 +138,7 @@ export default {
 		},
 
 		getCap(c) {
-			// console.log('getCap', c);
+			console.log('getCap', c);
 
 			var citta = _.chain(this.raw).filter({ nome: c }).head().value();
 
@@ -156,14 +160,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss" scoped>
-.vue-cap{
-    .vue-cap-item {
-        label, select{
-            display: block;
-            width: 100%;
-        }
-    }
-}
-</style>

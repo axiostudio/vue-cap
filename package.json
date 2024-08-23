@@ -1,51 +1,31 @@
 {
-  "name": "vue-cap",
-  "version": "0.1.1",
-  "type": "module",
-  "main": "dist/vue-cap.umd.js",
-  "module": "dist/vue-cap.esm.js",
-  "unpkg": "dist/vue-cap.min.js",
-  "browser": {
-    "./sfc": "src/vue-cap.vue"
-  },
-  "scripts": {
-    "serve": "vue serve --open src/vue-cap.vue",
-    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
-    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-cap.umd.js",
-    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-cap.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-cap.min.js"
-  },
-  "devDependencies": {
-    "@rollup/plugin-buble": "^1.0.3",
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@vue/cli-plugin-babel": "^5.0.8",
-    "rollup": "^4.21.0",
-    "rollup-plugin-vue": "^6.0.0",
-    "sass-loader": "^16.0.1",
-    "vue": "^3.4.38",
-    "vue-template-compiler": "^2.7.16"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+    "name": "vue-cap",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "files": [
+        "dist"
     ],
-    "parserOptions": {
-      "parser": "babel-eslint"
+    "main": "./dist/vue-cap.umd.cjs",
+    "module": "./dist/vue-cap.js",
+    "exports": {
+        ".": {
+            "import": "./dist/vue-cap.js",
+            "require": "./dist/vue-cap.umd.cjs"
+        }
     },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
-  "dependencies": {
-    "axios": "^1.7.4",
-    "lodash": "^4.17.21"
-  }
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "axios": "^1.7.4",
+        "lodash": "^4.17.21",
+        "vue": "^3.4.37"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.1.2",
+        "vite": "^5.4.1"
+    }
 }
