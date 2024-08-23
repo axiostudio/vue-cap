@@ -1,6 +1,7 @@
 {
   "name": "vue-cap",
   "version": "0.1.1",
+  "type": "module",
   "main": "dist/vue-cap.umd.js",
   "module": "dist/vue-cap.esm.js",
   "unpkg": "dist/vue-cap.min.js",
@@ -15,14 +16,14 @@
     "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-cap.min.js"
   },
   "devDependencies": {
-    "@rollup/plugin-buble": "^0.21.3",
-    "@rollup/plugin-commonjs": "^11.1.0",
-    "@vue/cli-plugin-babel": "^4.5.13",
-    "rollup": "^1.17.0",
-    "rollup-plugin-vue": "^5.0.1",
-    "sass-loader": "^10",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "@rollup/plugin-buble": "^1.0.3",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "rollup": "^4.21.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "sass-loader": "^16.0.1",
+    "vue": "^3.4.38",
+    "vue-template-compiler": "^2.7.16"
   },
   "eslintConfig": {
     "root": true,
@@ -44,7 +45,7 @@
     "not dead"
   ],
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^1.7.4",
     "lodash": "^4.17.21"
   }
 }

@@ -28,7 +28,9 @@
             </div>
 
 		</template>
-        <div v-else>Loading...</div>
+        <div v-else>
+			Loading...
+		</div>
 
 	</div>
 </template>
